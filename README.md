@@ -1,4 +1,4 @@
-# alerta-transform-oid
+# Alerta SNMP Trap Severity Plugin
 Alerta plugin to transform the severity of SNMP traps
 
 Add the following to your alertad.conf file
