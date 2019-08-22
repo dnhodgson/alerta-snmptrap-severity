@@ -1,0 +1,1 @@
+# alerta-snmptrap-severity
