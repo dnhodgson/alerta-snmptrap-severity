@@ -12,3 +12,12 @@ Example of severity map file
          "severity": "informational"
        "NET-SNMP-EXAMPLES-MIB::netSnmpExampleHeartbeatNotification":
          "severity": "informational"
+
+If you are using docker for Alerta you can build a layer on top of the image and install the plugin with the following docker file
+        FROM alerta/alerta-web:latest
+        WORKDIR /venv
+        RUN git clone https://github.com/dnhodgson/alerta-snmptrap-severity.git
+        RUN bin/python3 alerta-snmptrap-severity/setup.py install
+
+You can link in your severity file when you run the container.
+        docker run ... -v alerta-snmptrapseverity.yml:/etc/alerta-snmptrapseverity.yml ...
