@@ -16,9 +16,7 @@ Example of severity map file
 If you are using docker for Alerta you can build a layer on top of the image and install the plugin with the following docker file
 
         FROM alerta/alerta-web:latest
-        WORKDIR /venv
-        RUN git clone https://github.com/dnhodgson/alerta-snmptrap-severity.git
-        RUN bin/python3 alerta-snmptrap-severity/setup.py install
+        RUN /venv/bin/pip install git+https://github.com/dnhodgson/alerta-snmptrap-severity.git
 
 You can link in your severity file when you run the container.
 
