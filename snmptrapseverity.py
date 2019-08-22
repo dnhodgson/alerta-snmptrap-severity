@@ -14,7 +14,7 @@ class SNMPTrapSeverity(PluginBase):
                                                         default="/etc/alerta-snmptrapseverity.yml",
                                                         type=str)
         LOG.warning(SNMPTRAP_SEVERITY_FILE)
-        self.severity_map = yaml.load(open(SNMPTRAP_SEVERITY_FILE))
+        self.severity_map = yaml.safe_load(open(SNMPTRAP_SEVERITY_FILE))
 
     def pre_receive(self, alert):
         if alert.attributes['trapvars']['_O'] in self.severity_map:
